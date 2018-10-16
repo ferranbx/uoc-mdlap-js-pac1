@@ -21,8 +21,14 @@
     "node": ">=8"
   },
   "eslintConfig": {
-    "plugins": ["node", "jest"],
-    "extends": ["eslint:recommended", "plugin:node/recommended"],
+    "plugins": [
+      "node",
+      "jest"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:node/recommended"
+    ],
     "rules": {
       "node/no-unsupported-features": 0
     },
