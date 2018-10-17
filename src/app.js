@@ -1,3 +1,4 @@
-import isPalindrome from './challenges/palindrome';
-
-console.log(isPalindrome("asdsà"));
+import rectangleArea from './challenges/rectangle';
+const rectangle = ["(1 1)","(1 3)","(3 1)","(3 3)"];
+const area = rectangleArea(rectangle);
+console.log(area);
