@@ -1,5 +1,3 @@
-import arabic2roman from './challenges/romanNumerals';
-let arabics = [1,2,3,4,5,6,7,8,9,10,44,444,9999];
-arabics.map(arabic => {
-    console.log(`${arabic} => ${arabic2roman(arabic)}`);
-});
+import rectangleArea from './challenges/rect';
+var candidate = ["(0 0)","(2.5 0)","(2.5 2.5)","(0 2.5)"];
+console.log(rectangleArea(candidate));
