@@ -1,4 +1,5 @@
-import rectangleArea from './challenges/rectangle';
-const rectangle = ["(1 1)","(1 3)","(3 1)","(3 3)"];
-const area = rectangleArea(rectangle);
-console.log(area);
+import arabic2roman from './challenges/romanNumerals';
+let arabics = [1,2,3,4,5,6,7,8,9,10,44,444,9999];
+arabics.map(arabic => {
+    console.log(`${arabic} => ${arabic2roman(arabic)}`);
+});
