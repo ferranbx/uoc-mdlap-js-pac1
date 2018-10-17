@@ -1,7 +1,7 @@
 const isPalindrome = (str) => {
 
     // DETECT EMPTY INPUT
-    // If the input is empty, return fals
+    // If the input is empty, return false
     if(!str) { return false };
 
     // NOMRALIZE THE STRING

@@ -1,6 +1,6 @@
-import pairChain from '../challenges/adn';
+import pairChain from '../challenges/dna';
 
-describe('ADN TESTS', () => {
+describe('DNA TESTS', () => {
     test('Should return an empty string if the original chain is empty', () => {
         expect(pairChain()).toEqual([]);
     })
