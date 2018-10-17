@@ -1,4 +1,5 @@
 const pairChain = (chain) => {
+    if(!chain) { return [] }
     const regex = /(A|T|G|C)/g;
     return chain.toUpperCase().match(regex).map((nucleotide) => {
         switch (nucleotide) {
