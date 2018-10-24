@@ -21,20 +21,20 @@ const giveChange = (price, paid, till) => {
 
     // Given a till with enough cash, then calculate the change
     let change = calculateChange(changeAmount, till);
-    console.log(`change amount: ${changeAmount}`);
-    console.log(`change: ${change}`);
 
-
+    // Givem a till with enough cash, when there is no combination to return the exact change, then shall return "Insufficient Funds"
     if(!change || change.length === 0) { return {
         'status': 'INSUFFICIENT_FUNDS',
         'change': []
     }};
 
+    // Givem a till with enough cash, when the funds are exactly the same amount than the cash, then shall return "close" and the change
     if( changeAmount === originalTillCash ) { return {
         'status': 'CLOSE',
         'change': change
     }};
 
+    // Givem a till with enough cash, when the funds are not exactly the same amount than the cash, then shall return "open" and the change
     return {
         'status': 'OPEN',
         'change': change
@@ -59,15 +59,25 @@ const totalCash = (till) => {
 
 const calculateChange = (changeAmount, till) => {
 
+    // When the change amount is zero, then return an empty array
+    if( changeAmount === 0 ) { return [] };
+
+    // When the change amount is greater than zero, then initiate the list of change
     let change = [];
 
-    if( changeAmount === 0 ) { return change };
-
+    // Then iterate for each till item
     till.forEach(currencyItem => {
 
+        // Then store the currency name
         let currencyName = currencyItem[0];
+
+        // Then store the currency amount
         let currencyAmount = currencyItem[1];
+
+        // Then compute the currency value
         let currencyValue = currencyItemValue(currencyName);
+
+        // Then compute the quantaty of coins/bills to add to change
         let quantity = Math.floor(Math.min(currencyAmount,changeAmount)/currencyValue);        
 
         if( quantity ) {
