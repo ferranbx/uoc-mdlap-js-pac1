@@ -31,7 +31,7 @@ describe('TILL TESTS', () => {
             "change": []
         });
     });
-    test('Shall detect not enough funds', () => {
+    test('Shall detect when the change amount and the till funds are the same', () => {
         const price = 5.60;
         const paid = 10;
         const till = [
@@ -47,6 +47,23 @@ describe('TILL TESTS', () => {
                 ["1CENT", 2.00],
                 ["10CENTS", 0.40],
                 ["1EURO", 2]
+            ]
+        });
+    });
+    test('Shall calculate the change', () => {
+        const price = 5.60;
+        const paid = 6;
+        const till = [
+            ["1CENT", 2.00],
+            ["10CENTS", 0.40],
+            ["1EURO", 2]
+        ];
+        console.log("------------------------");
+        
+        expect(giveChange(price, paid, till)).toEqual({
+            "status": 'OPEN',
+            "change": [
+                ["1CENT", 0.40]
             ]
         });
     });
